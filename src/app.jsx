@@ -7,7 +7,10 @@ import "./app.scss";
 class App extends Component {
   componentDidMount() {}
 
-  componentDidShow() {}
+  componentDidShow() {
+    //获取设备信息
+    store.appFlow.getSystemInfo();
+  }
 
   componentDidHide() {}
 
@@ -15,7 +18,7 @@ class App extends Component {
 
   // this.props.children 就是要渲染的页面
   render() {
-    return <Provider store={store}>{this.props.children}</Provider>;
+    return <Provider {...store}>{this.props.children}</Provider>;
   }
 }
 

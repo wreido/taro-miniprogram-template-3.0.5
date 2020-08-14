@@ -17,6 +17,8 @@ export default {
       ]
     }
   ],
+  // 分包预下载
+  preloadRule: {},
   tabBar: {
     color: "#999999",
     selectedColor: "#FF6000",
@@ -37,5 +39,17 @@ export default {
         selectedIconPath: "./assets/images/tabBarIcon/mine_on.png"
       }
     ]
+  },
+  // 小程序授权页文案提示，例如：授权登录
+  permission: {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  // 是否开启调试模式
+  debug: false,
+  // 异步请求超时时间
+  networkTimeout: {
+    request: 5000
   }
 }

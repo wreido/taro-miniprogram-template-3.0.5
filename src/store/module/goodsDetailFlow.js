@@ -1,7 +1,6 @@
 /* 
 * 商品详情
 */
-import Taro from '@tarojs/taro'
 import { observable } from 'mobx'
 
 const GoodsDetailFlow = observable({
