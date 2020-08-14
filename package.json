@@ -9,6 +9,8 @@
     "css": "sass"
   },
   "scripts": {
+    "dev:weapp": "npm run build:weapp -- --watch CONFIG_ENV=development",
+    "build:weapp:testing": "taro build --type weapp CONFIG_ENV=testing",
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
@@ -17,7 +19,6 @@
     "build:rn": "taro build --type rn",
     "build:qq": "taro build --type qq",
     "build:quickapp": "taro build --type quickapp",
-    "dev:weapp": "npm run build:weapp -- --watch",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:tt": "npm run build:tt -- --watch",

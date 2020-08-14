@@ -1,3 +1,9 @@
+import path from "path";
+
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 const config = {
   projectName: 'taro-miniprogram-template@3.0.5',
   date: '2020-8-14',
@@ -9,8 +15,14 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
+  sass: {
+    resource: path.resolve(__dirname, '..', 'src/assets/style/mixins.scss')
+  },
   plugins: [],
   defineConstants: {
+  },
+  alias: {
+    '@': resolve('src')
   },
   copy: {
     patterns: [
@@ -63,8 +75,22 @@ const config = {
 }
 
 module.exports = function (merge) {
-  if (process.env.NODE_ENV === 'development') {
-    return merge({}, config, require('./dev'))
+  // 注入自定义变量
+  const injectConfig = {
+    env: {
+      CONFIG_ENV: '"production"' // 注入的环境变量 默认生产环境 默认值不可更改
+    }
   }
-  return merge({}, config, require('./prod'))
+
+  process.argv.forEach((el) => {
+    if (el.indexOf('CONFIG_ENV=') > -1) {
+      injectConfig.env.CONFIG_ENV = `'${el.split('=')[1]}'`
+      return false;
+    }
+  })
+
+  if (process.env.NODE_ENV === 'development') {
+    return merge({}, config, require('./dev'), injectConfig)
+  }
+  return merge({}, config, require('./prod'), injectConfig)
 }

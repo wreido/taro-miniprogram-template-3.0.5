@@ -1,0 +1,135 @@
+// 大小
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// 单行省略号
+@mixin single-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行省略号
+@mixin multi-ellipsis($row: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}
+
+// 1px极细线
+@mixin hairline($ori) {
+  position: relative;
+  &::after {
+    content: " ";
+    position: absolute;
+    pointer-events: none;
+    box-sizing: border-box;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    transform: scale(0.5);
+    border: 0 solid #f1f1f1;
+    border-#{$ori}-width: 1px;
+  }
+}
+
+// 固定头部
+@mixin top-position {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+
+//居中
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 固定低部
+@mixin bottom-fixed-position {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+
+// 居中
+@mixin centered-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+// 居下
+@mixin bottom-position {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// 宽高
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// 向右小三角
+@mixin triangle() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after {
+    display: block;
+    content: "";
+    @include wh(21px, 21px);
+    background: url(https://hsrj.oss-cn-shenzhen.aliyuncs.com/underline/zy-mp/local/home/grzx_arrow.png) center center
+      no-repeat;
+    background-size: 100%;
+  }
+}
+
+// 向右小三角 CSS版
+@mixin triangleCSS($length: 15px, $width: 2px, $color: #e12235, $orientation: 45deg, $offsetY: 0px) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::after {
+    display: inline-block;
+    content: "";
+    @include wh($length, $length);
+    border: $width solid $color;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate($orientation) translateY($offsetY);
+  }
+}
+
+// 分割区
+@mixin division($height, $color) {
+  height: $height;
+  background-color: $color;
+}
+
+// 遮罩透明层
+@mixin mask-modal() {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}

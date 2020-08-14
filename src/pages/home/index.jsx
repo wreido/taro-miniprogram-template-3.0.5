@@ -4,12 +4,8 @@ import { View } from "@tarojs/components";
 import "./index.scss";
 
 class Index extends Component {
-  componentDidMount() {
-    console.log(11111, process.env.CONFIG_ENV);
-  }
-
   render() {
-    return <View className="index">131313</View>;
+    return <View className="index">11111111</View>;
   }
 }
 
