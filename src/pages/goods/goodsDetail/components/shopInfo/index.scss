@@ -1,0 +1,31 @@
+.shopInfoWarp {
+  position: relative;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include wh(100vw, 150px);
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 20px;
+  .shopInfo {
+    @include center;
+    .user-image {
+      @include wh(90px, 90px);
+      border-radius: 45px;
+    }
+    .user-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  }
+  .to-shop {
+    @include wh(150px, 54px);
+    @include center;
+    border: 1px solid #ff5000;
+    font-size: 26px;
+    color: #ff5000;
+    border-radius: 30px;
+  }
+}

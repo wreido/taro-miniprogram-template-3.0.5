@@ -1,0 +1,67 @@
+.getUserInfoAuthWrap {
+  .modal_mask {
+    @include mask-modal;
+  }
+  .modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    transform: translateX(-50%) translateY(-50%);
+    background: white;
+    z-index: 999;
+    display: flex;
+    flex-flow: column;
+    border-radius: 10px;
+    padding: 40px;
+    .modal-head {
+      position: relative;
+      .closeBtn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: none;
+        border: none;
+        font-size: 40px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        &::after {
+          border: none;
+        }
+      }
+    }
+    .modal-body {
+      display: flex;
+      justify-content: center;
+      font-size: 30px;
+      color: #666666;
+      margin-bottom: 20px;
+      .inner {
+        display: flex;
+        flex-flow: column;
+        .coverimg {
+          display: flex;
+          justify-content: center;
+          .image {
+            width: 180px;
+            height: 180px;
+          }
+        }
+      }
+    }
+    .modal-foot {
+      .besure {
+        background: linear-gradient(left, #fe9424, #ff7113);
+        margin: 0;
+        color: #fff;
+        border-radius: 40px;
+        padding: 0;
+        font-size: 30px;
+        &::after {
+          border: none;
+        }
+      }
+    }
+  }
+}

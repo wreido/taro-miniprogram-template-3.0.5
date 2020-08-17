@@ -1,48 +1,60 @@
-import path from "path";
+const path = require("path");
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
 const config = {
-  projectName: 'taro-miniprogram-template@3.0.5',
-  date: '2020-8-14',
+  projectName: 'Taro-miniprogram',
+  date: '2020-3-20',
   designWidth: 750,
   deviceRatio: {
-    640: 2.34 / 2,
-    750: 1,
-    828: 1.81 / 2
+    '640': 2.34 / 2,
+    '750': 1,
+    '828': 1.81 / 2
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
   sass: {
     resource: path.resolve(__dirname, '..', 'src/assets/style/mixins.scss')
   },
-  plugins: [],
+  babel: {
+    sourceMap: true,
+    presets: [
+      ['env', {
+        modules: false
+      }]
+    ],
+    plugins: [
+      'transform-decorators-legacy',
+      'transform-class-properties',
+      'transform-object-rest-spread',
+      ['transform-runtime', {
+        helpers: false,
+        polyfill: false,
+        regenerator: true,
+        moduleName: 'babel-runtime'
+      }
+      ]
+    ]
+  },
   defineConstants: {
   },
   alias: {
     '@': resolve('src')
   },
-  copy: {
-    patterns: [
-    ],
-    options: {
-    }
-  },
-  framework: 'react',
   mini: {
-    webpackChain(chain, webpack) {
-      // linaria/loader 选项详见 https://github.com/callstack/linaria/blob/master/docs/BUNDLERS_INTEGRATION.md#webpack
-      chain.module
-        .rule('script')
-        .use('linariaLoader')
-        .loader('linaria/loader')
-        .options({
-          sourceMap: process.env.NODE_ENV !== 'production',
-        })
-    },
     postcss: {
+      autoprefixer: {
+        enable: true,
+        config: {
+          browsers: [
+            'last 3 versions',
+            'Android >= 4.1',
+            'ios >= 8'
+          ]
+        }
+      },
       pxtransform: {
         enable: true,
         config: {
@@ -52,7 +64,7 @@ const config = {
       url: {
         enable: true,
         config: {
-          limit: 1024 // 设定转换尺寸上限
+          limit: 10240 // 设定转换尺寸上限
         }
       },
       cssModules: {
@@ -71,6 +83,11 @@ const config = {
       autoprefixer: {
         enable: true,
         config: {
+          browsers: [
+            'last 3 versions',
+            'Android >= 4.1',
+            'ios >= 8'
+          ]
         }
       },
       cssModules: {
@@ -91,16 +108,16 @@ module.exports = function (merge) {
       CONFIG_ENV: '"production"' // 注入的环境变量 默认生产环境 默认值不可更改
     }
   }
-
-  process.argv.forEach((el) => {
-    if (el.indexOf('CONFIG_ENV=') > -1) {
-      injectConfig.env.CONFIG_ENV = `'${el.split('=')[1]}'`
-      return false;
+  for (const argv of process.argv) {
+    if (argv.indexOf('CONFIG_ENV=') > -1) {
+      injectConfig.env.CONFIG_ENV = `'${argv.split('=')[1]}'`
+      break
     }
-  })
+  }
 
   if (process.env.NODE_ENV === 'development') {
     return merge({}, config, require('./dev'), injectConfig)
   }
   return merge({}, config, require('./prod'), injectConfig)
 }
+

@@ -1,0 +1,25 @@
+.shareBtnBarWrap {
+  .shareBar {
+    pointer-events: none;
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+  }
+  .shareAction {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    transform: translateY(-50%);
+    background: url(https://hsrj.oss-cn-shenzhen.aliyuncs.com/underline/star_shop/index/icon_index_share.png) 0 0
+      no-repeat;
+    background-size: contain;
+    pointer-events: auto;
+  }
+}

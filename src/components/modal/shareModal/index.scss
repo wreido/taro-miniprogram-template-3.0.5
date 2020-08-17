@@ -1,0 +1,121 @@
+.shareModalWrap {
+  .modal_mask {
+    @include mask-modal;
+  }
+  .posterModal {
+    @include wh(100vw, 100vh);
+    @include top-position;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    .posterImg {
+      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-55%);
+      @include wh(500px, 788px);
+      .image {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+      .close {
+        position: absolute;
+        top: -17px;
+        right: -100px;
+        color: #fff;
+        font-size: 50px;
+        width: 56px;
+        height: 56px;
+        background: url("https://hsrj.oss-cn-shenzhen.aliyuncs.com/underline/star_shop/index/icon_poster_X.png") 0 0
+          no-repeat;
+        background-size: 50%;
+      }
+    }
+    .save {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include wh(500px, 80px);
+      background: #ff7113;
+      border-radius: 80px;
+      color: #fff;
+      font-size: 34px;
+      transform: translateX(-50%) translateY(550%);
+    }
+  }
+
+  .shareModal {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    z-index: 9999;
+    .head {
+      padding: 40px 40px 20px 40px;
+      display: flex;
+      justify-content: center;
+      font-size: 30px;
+      color: #333333;
+    }
+    .body {
+      padding: 40px 140px;
+      display: flex;
+      justify-content: space-between;
+      .item {
+        width: 120px;
+        display: flex;
+        flex-flow: column;
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        &::after {
+          border: none;
+        }
+        .icon {
+          display: flex;
+          justify-content: center;
+          .icon-image {
+            width: 100px;
+            height: 100px;
+          }
+        }
+        .text {
+          display: flex;
+          justify-content: center;
+          .tip-text {
+            width: 120px;
+            font-size: 24px;
+            color: #666666;
+            margin-top: 10px;
+          }
+        }
+      }
+      .shareFriend .icon-image {
+        background: url("https://hsrj.oss-cn-shenzhen.aliyuncs.com/underline/star_shop/public/icon_shareFriend.png") 0 0
+          no-repeat;
+        background-size: contain;
+      }
+      .shareQuan .icon-image {
+        background: url("https://hsrj.oss-cn-shenzhen.aliyuncs.com/underline/star_shop/public/icon_shareQuan.png") 0 0
+          no-repeat;
+        background-size: contain;
+      }
+    }
+    .foot {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90px;
+      background: #f9f9f9;
+      color: #666;
+    }
+  }
+}

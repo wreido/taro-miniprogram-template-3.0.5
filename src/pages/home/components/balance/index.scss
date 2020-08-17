@@ -1,0 +1,89 @@
+.balance {
+  width: 702px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 0px auto 25px;
+  box-sizing: border-box;
+  overflow: hidden;
+  .tip {
+    @include wh(52px, 52px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .tip-icon {
+      @include wh(26px, 26px);
+      margin-left: -10px;
+    }
+  }
+  .balance-header {
+    @include wh(100%, 108px);
+    background: url(https://hsrj.oss-cn-shenzhen.aliyuncs.com/underline/zy-mp/local/home/bg_daitixian.png) center center
+      no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-right: 30px;
+    .balance-header-left {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .title {
+        font-size: 24px;
+        color: #f9df89;
+        margin-left: 29px;
+      }
+      .number {
+        font-size: 36px;
+        color: #f9df89;
+        margin-left: 9px;
+        font-weight: bold;
+      }
+    }
+    .balance-header-right {
+      @include wh(150px, 60px);
+      background: linear-gradient(90deg, rgba(249, 223, 137, 1), rgba(229, 176, 100, 1));
+      border-radius: 30px;
+      color: #333333;
+      font-size: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .balance-content {
+    position: relative;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .balance-content-line {
+      @include wh(2px, 60px);
+      background: #f1f1f1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .balance-content-item {
+      flex: 1;
+      height: 100%;
+      box-sizing: border-box;
+      padding-top: 30px;
+      padding-left: 29px;
+      .title {
+        color: #666;
+        font-size: 24px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .number {
+        color: #666;
+        font-size: 36px;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.useRuleWarp {
+  width: 100vw;
+  margin-top: 20px;
+  overflow: hidden;
+  .item {
+    display: flex;
+    background-color: #fff;
+    padding: 25px 0;
+    border-bottom: 1px solid #f7f7f7;
+    overflow: hidden;
+    .title {
+      color: #999;
+      font-size: 26px;
+      margin-left: 24px;
+      margin-right: 29px;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+      color: #333;
+      font-size: 26px;
+      margin-left: 10px;
+    }
+    &.delivery {
+      .content {
+        .icon {
+          display: block;
+          @include wh(26px, 26px);
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+}

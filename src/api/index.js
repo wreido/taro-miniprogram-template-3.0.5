@@ -1,5 +1,6 @@
 import Taro from '@tarojs/taro'
 import enumList from '@/utils/enumList'
+import md5 from 'js-md5'
 import store from '@/store'
 import { API_ORIGIN } from './baseUrl'
 
@@ -38,7 +39,9 @@ const $fetch = (path, data = {}, options = { loadingOps: { loading: true, loadin
     header: {
       timestamp: enumList.currTime,
       sId: enumList.sId,
+      sign: md5(`timestamp=${enumList.currTime}&sId=${enumList.sId}&apiKey=${enumList.signKey}`).slice(3, 13),
       appType: enumList.appType,
+      authentication: store.loginFlow.userId,
       userId: store.loginFlow.userId,
       ...options.header,
     },

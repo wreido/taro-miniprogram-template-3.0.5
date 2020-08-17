@@ -1,0 +1,35 @@
+.bannerWarp {
+  position: relative;
+  overflow: hidden;
+  .banner {
+    @include wh(750px, 650px);
+    .banner-item {
+      position: relative;
+      @include wh(750px, 650px);
+      .banner-image {
+        @include wh(100%, 100%);
+      }
+      .video-btn {
+        @include wh(100px, 100px);
+        position: absolute;
+        top: 275px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ffffff;
+        .video-btn {
+          @include wh(100px, 100px);
+        }
+      }
+    }
+  }
+  .indicatorDots {
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 20px;
+  }
+}

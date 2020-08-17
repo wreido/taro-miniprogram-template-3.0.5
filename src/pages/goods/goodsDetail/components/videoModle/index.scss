@@ -1,0 +1,19 @@
+.videoWarp {
+  position: absolute;
+  @include wh(750px, 650px);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  .video {
+    @include wh(750px, 650px);
+  }
+  .close {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    @include wh(56px, 56px);
+    .close-play {
+      @include wh(56px, 56px);
+    }
+  }
+}

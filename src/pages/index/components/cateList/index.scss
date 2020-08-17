@@ -1,0 +1,41 @@
+.cate-box {
+  display: flex;
+  flex-direction: row;
+  @include wh(100vw, 90px);
+  align-items: center;
+  background-color: #fff;
+  z-index: 2;
+  .cate-list {
+    overflow: hidden;
+    .cate-list-inner {
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      .cate-list-item {
+        position: relative;
+        flex-shrink: 0;
+        color: #666666;
+        font-size: 28px;
+        margin: 0 22px;
+        height: 70px;
+        line-height: 70px;
+        &.cur {
+          font-size: 30px;
+          color: #333333;
+          font-weight: bold;
+        }
+        &.cur::before {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          @include wh(50px, 6px);
+          content: "";
+          border-radius: 5px;
+          background-color: #ff7113;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}

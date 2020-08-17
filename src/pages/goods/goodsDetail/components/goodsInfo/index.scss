@@ -1,0 +1,111 @@
+.goodsInfoWarp {
+  .price {
+    display: flex;
+    @include wh(100vw, 100px);
+    background: url(https://hsrj.oss-cn-shenzhen.aliyuncs.com/underline/zhiyou-miniprogram/goods_details.png);
+    background-size: 100%;
+    .price-info {
+      @include wh(522px, 100px);
+      opacity: 0.95;
+      padding-left: 32px;
+      box-sizing: border-box;
+      .price-info-hd {
+        display: flex;
+        align-items: baseline;
+        .price-range {
+          color: #ffffff;
+          font-size: 46px;
+          font-weight: bold;
+          .icon {
+            font-size: 35px;
+          }
+        }
+        .original-price {
+          padding: 0 10px;
+          font-size: 24px;
+          color: rgba(255, 255, 255, 0.6);
+          text-decoration: line-through;
+        }
+      }
+      .price-info-bd {
+        .item {
+          color: rgb(255, 255, 255);
+          font-size: 20px;
+        }
+      }
+    }
+    .price-time {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      color: #ff5000;
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+  .goods-info {
+    position: relative;
+    background-color: #fff;
+    padding: 24px;
+    box-sizing: border-box;
+    min-height: 151px;
+    .goods-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      box-sizing: border-box;
+      .goods-header {
+        .goods-name {
+          flex: 1;
+          font-size: 30px;
+          color: #333333;
+          font-weight: bold;
+          @include multi-ellipsis;
+        }
+        .tag-list {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 10px 0;
+          .goods-labelled {
+            flex-shrink: 0;
+            display: inline-block;
+            color: #ff7113;
+            border: 1px solid rgba(239, 50, 51, 0.5);
+            border-radius: 4px;
+            font-size: 20px;
+            padding: 0px 7px;
+            margin: 5px 10px;
+            margin-left: 0px;
+            &.parcelGood {
+              color: #333;
+              background: linear-gradient(135deg, rgba(255, 225, 2, 1), rgba(255, 207, 3, 1));
+              padding: 3px 7px;
+              border: none;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+      .share-btn {
+        flex-shrink: 0;
+        @include wh(115px, 115px);
+        background: url("https://hsrj.oss-cn-shenzhen.aliyuncs.com/underline/zy-mp/local/share/goodsShareBtn.png") 0 0
+          no-repeat;
+        background-size: contain;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    .goods-tip {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      .goods-tip-text {
+        font-size: 24px;
+        color: #999999;
+      }
+    }
+  }
+}

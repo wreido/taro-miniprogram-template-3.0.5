@@ -1,0 +1,20 @@
+.shopInfo {
+  position: relative;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 30px 1px rgba(0, 0, 0, 0.05);
+  @include wh(100vw, 90px);
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 1;
+  .user-image {
+    @include wh(54px, 54px);
+    border-radius: 30px;
+  }
+  .user-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,163 @@
+.goodsListWarp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  .goods {
+    width: 702px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    .goods-img {
+      position: relative;
+      @include wh(702px, 396px);
+      .image {
+        @include wh(702px, 396px);
+      }
+      .label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 24px;
+        color: #fff;
+        background: 0 0 no-repeat;
+        background-size: 100% 100%;
+        border-radius: 0 0 16px 0;
+        overflow: hidden;
+        height: 34px;
+        padding: 0 14px;
+        box-sizing: border-box;
+        &.spike-str {
+          background-image: url(https://hsrj.oss-cn-shenzhen.aliyuncs.com/underline/zy-mp/local/index/bg_sy_biaoqian%202.png);
+        }
+        &.looting,
+        &.end {
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          @include center;
+          border-radius: 0;
+          padding: 0;
+          .image {
+            width: 110px;
+            height: 110px;
+          }
+        }
+        &.tag {
+          left: 20px;
+          top: 20px;
+          border-radius: 25px 23px 23px 0px;
+          font-size: 28px;
+          color: #fefefe;
+          height: 46px;
+          padding: 4px 24px;
+          &.ahead {
+            background: linear-gradient(90deg, rgba(112, 202, 115, 1), rgba(87, 187, 91, 1));
+          }
+          &.tagShowVOList {
+            background: linear-gradient(135deg, #fd7134, #fd542e);
+          }
+        }
+      }
+    }
+    .goods-info {
+      display: flex;
+      justify-content: space-between;
+      .goods-name {
+        display: block;
+        flex: 1;
+        font-size: 30px;
+        color: #333333;
+        font-weight: 700;
+        margin: 24px 24px 16px;
+        @include multi-ellipsis;
+      }
+      .goods-follow-number {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        width: 124px;
+        &::after {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          content: "";
+          width: 2px;
+          height: 50%;
+          background-color: #e5e5e5;
+          transform: translateY(-50%);
+        }
+        .follow-number {
+          color: #ff7113;
+          font-size: 26rpx;
+        }
+        .follow-title {
+          color: #999;
+          font-size: 20px;
+        }
+      }
+    }
+    .goods-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px 24px 24px;
+      .price-box {
+        .sale-stock {
+          color: #999;
+          font-size: 20px;
+        }
+        .price-inner {
+          display: flex;
+          align-items: center;
+          .price {
+            display: flex;
+            align-items: baseline;
+            .sale-price {
+              .text:nth-child(1) {
+                font-size: 20px;
+                color: #ef3233;
+                font-weight: bold;
+              }
+              .text:nth-child(2) {
+                font-size: 40px;
+                color: #ef3233;
+                font-weight: bold;
+                margin-right: 10px;
+              }
+            }
+            .original-price {
+              font-size: 20px;
+              color: #999999;
+              text-decoration: line-through;
+            }
+          }
+          .tag {
+            color: #ff5000;
+            border: 1px solid #ff5000;
+            border-radius: 4px;
+            font-size: 20px;
+            padding: 0px 7px;
+            margin-left: 12px;
+          }
+        }
+      }
+      .pay {
+        @include wh(150px, 60px);
+        line-height: 60px;
+        background: linear-gradient(90deg, rgba(254, 148, 36, 1), rgba(255, 113, 19, 1));
+        border-radius: 30px;
+        font-size: 26px;
+        color: #fff;
+        text-align: center;
+        &.disabled {
+          background: #d9d9d9;
+        }
+      }
+    }
+  }
+}

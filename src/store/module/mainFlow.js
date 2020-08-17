@@ -1,6 +1,7 @@
 /* 
 * 首页
 */
+import Taro from '@tarojs/taro'
 import { observable } from 'mobx'
 import $fetch, { $api } from '@/api'
 

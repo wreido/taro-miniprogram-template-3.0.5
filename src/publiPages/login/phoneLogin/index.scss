@@ -1,0 +1,61 @@
+.phoneLoginWarp {
+  margin-top: 70px;
+  .item {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 24px;
+    .item-inner {
+      display: flex;
+      align-items: center;
+      color: #333333;
+      font-size: 30px;
+      border-bottom: 1px solid #f1f1f1;
+      height: 100px;
+      justify-content: space-between;
+      .placeholderText {
+        color: #ccc;
+      }
+      input {
+        flex: 1;
+      }
+      text {
+        width: 150px;
+      }
+      .code-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include wh(172px, 64px);
+        border-radius: 10px;
+        font-size: 26px;
+        color: #cccccc;
+        border: 1px solid #f1f1f1;
+        &.able {
+          border: 1px solid #ff7113;
+          color: #ff7113;
+        }
+        &.disabled {
+          border: 1px solid #cccccc;
+          color: #cccccc;
+        }
+      }
+    }
+  }
+  .phone-item {
+    margin-bottom: 10px;
+  }
+  .submit {
+    width: 702px;
+    height: 80px;
+    background-color: #ff7113;
+    text-align: center;
+    line-height: 80px;
+    margin: 90px auto 60px;
+    color: #fff;
+    border-radius: 40px;
+    font-size: 34px;
+    &.disabled {
+      background-color: #d9d9d9;
+    }
+  }
+}
