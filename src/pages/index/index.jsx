@@ -1,10 +1,17 @@
 import React, { Component } from "react";
-import { View } from "@tarojs/components";
+import { View, Text } from "@tarojs/components";
 import $fetch, { $api } from "@/api";
 import Bus, { BusType } from "@/bus";
 import { observer, inject } from "mobx-react";
+import { styled } from "linaria/react";
 
 import "./index.scss";
+
+const Title = styled(Text)`
+  color: ${(props) => props.color};
+  width: ${(props) => props.width};
+  border: ${(props) => props.border};
+`;
 
 @inject("appFlow")
 @observer
@@ -42,6 +49,14 @@ class Index extends Component {
 
     return (
       <View className="index">
+        <Title
+          className="dadadada"
+          color="red"
+          width="10px"
+          border="2px solid #000000"
+        >
+          13131
+        </Title>
         <View>{goodsDetail}</View>
       </View>
     );

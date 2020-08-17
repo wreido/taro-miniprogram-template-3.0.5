@@ -5,6 +5,7 @@ module.exports = {
     ['taro', {
       framework: 'react',
       ts: false
-    }]
+    }],
+    'linaria/babel'
   ]
 }

@@ -32,6 +32,16 @@ const config = {
   },
   framework: 'react',
   mini: {
+    webpackChain(chain, webpack) {
+      // linaria/loader 选项详见 https://github.com/callstack/linaria/blob/master/docs/BUNDLERS_INTEGRATION.md#webpack
+      chain.module
+        .rule('script')
+        .use('linariaLoader')
+        .loader('linaria/loader')
+        .options({
+          sourceMap: process.env.NODE_ENV !== 'production',
+        })
+    },
     postcss: {
       pxtransform: {
         enable: true,
