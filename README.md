@@ -16,7 +16,7 @@
 - 环境依赖
 
 ```
-taro 脚手架安装     cnpm install -g @tarojs/cli@2.0.7
+taro 脚手架安装     cnpm install -g @tarojs/cli@v2.0.7
 
 依赖安装            npm install
 ```
